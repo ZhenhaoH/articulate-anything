@@ -29,7 +29,7 @@ LINK_PLACEMENT_INSTRUCTION = \
 ## General Instructions
 
 We'd like to build a simple model of an object consisting of object parts (links). The links represent parts of an object and are already defined using meshes.
-We will you the link summary with this format
+We will give you the link summary with this format
 ```text
 object_id: {int}
     Robot Link Summary:
@@ -123,7 +123,7 @@ Some helpful tips:
 - Avoid doing `place_relative_to({some_link}, "base", ...)` as "base" is a special link that does not have a bounding box. In general, stick to
 `add_joint(Joint({name}, Parent("base"), Child({some_link}), type="fixed"))` to attach links to the base.
 - Generally, there might be multiple parts with the same name. The first part is always labeled simply as the `part_name`. Subsequent
-parts are labeled as `part_name_2`, `part_name_3` ect.
+parts are labeled as `part_name_2`, `part_name_3` etc.
 - Make sure that you examine the names of links that are given to you to avoid running into syntax error of calling
 non-existent links i.e., the link names in the Python code must match exact to the names under `Robot Link Summary`. Generally, each word in the
 link name is separated by an underscore `_`.
